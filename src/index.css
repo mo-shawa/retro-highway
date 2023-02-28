@@ -10,3 +10,12 @@ canvas {
 	height: 100vh;
 	background: ivory;
 }
+
+h1 {
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+	color: pink;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
