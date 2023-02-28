@@ -1,20 +1,19 @@
-import { useState } from "react"
-import { OrbitControls, useGLTF } from "@react-three/drei"
+import { Suspense } from "react"
+import { OrbitControls, useGLTF, Environment } from "@react-three/drei"
 import "./App.css"
 
 function App() {
-	const { scene, nodes } = useGLTF("./gltf/retro-highway_v4_decimated.gltf")
-	console.log(nodes, scene)
+	const { scene, nodes } = useGLTF("./gltf/retro-highway.gltf")
 
 	return (
 		<>
-			<color args={["#333333"]} attach="background" />
-			<OrbitControls makeDefault />
-			<primitive object={scene} />
-			<mesh scale={1.5}>
-				<boxGeometry />
-				<meshNormalMaterial />
-			</mesh>
+			<Suspense fallback={null}>
+				<Environment preset="sunset" background />
+				{/* <ambientLight intensity={1} /> */}
+				{/* <directionalLight intensity={1} /> */}
+				<OrbitControls makeDefault />
+				<primitive object={scene} />
+			</Suspense>
 		</>
 	)
 }
