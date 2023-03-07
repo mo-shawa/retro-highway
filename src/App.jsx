@@ -10,10 +10,9 @@ function App() {
 			<EffectComposer>
 				<Noise opacity={0.1} />
 			</EffectComposer>
-			<Environment preset="forest" background />
-			{/* <ambientLight intensity={1} /> */}
-			{/* <directionalLight intensity={1} /> */}
-			<OrbitControls makeDefault />
+			{/* <Environment preset="sunset" background /> */}
+			<ambientLight intensity={1} />
+			<directionalLight intensity={1} />
 			<primitive object={scene} />
 		</>
 	)
